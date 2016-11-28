@@ -114,5 +114,29 @@ if (parseInt(s.style.top)-parseInt(add.style.top)== -100 && (parseInt(s.style.le
     }
 }
 
+var shuffle = function ()
+{
+	for (var z= 0; z<puzz.length; z++)
+	{
+		puzz[z].className=puzz[z].className.replace("movablepiece","")
+		var random = Math.floor(Math.random() * (14)+1);
+		var temp = puzz[random].style.top;
+		puzz[random].style.top = freep.style.top;
+		freep.style.top = temp;
+		temp = puzz[random].style.left;
+		puzz[random].style.left = freep.style.left;
+		freep.style.left=temp;
+		
+	}	
+	
+}
+document.getElementById("shufflebutton").onclick = function ()
+{
+	shuffle();
+	move ();
+	//play();
+	
+}
+
 });
  
