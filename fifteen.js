@@ -24,14 +24,10 @@ function setupImage(puzzleObj, xyValues){
 	puzzleObj.style.backgroundPosition = a[0] + " "+ a[1];
 }
 
-//function shuffle (){
-	//
-//}
-
 document.addEventListener("DOMContentLoaded",function(){
 	var leftside=0;
 	var topside=0;
-	var puzzle = [];
+	var puzz = [];
 	
 var puzz=document.getElementById("puzzlearea").querySelectorAll("div");
 for (var t=0; t<puzz.length; t++)
@@ -48,148 +44,75 @@ for (var t=0; t<puzz.length; t++)
 		topside += 100;
 	}
 }
-});
-
-/*function empty (p){
-	var left = 0;
-	var top = 0;
-	if (p.offsetParent)
+function blank (a) {
+	var ls = 0;
+	var ts = 0;
+	if (a.offsetParent)
 	{
-		leftside+= p.offsetLeft;
-		topside+= p.offsetTop;
-		
+		ls+= a.offsetLeft;
+		ts+= a.offsetTop;
+	
+	
 	}
-} 
-var 
-var move = document.createElement("div");
-$("puzzlearea").appendChild(move);
-empty(move); 
+ }
+ 
+ var free = document.createElement ("div");
+	free.style.left = "300px";
+	free.style.width = "96px";
+	free.style.height = "96px";
+	free.style.top = "300px";
+	free.style.position = "aboslute";
+	free.style.backgroundImage = "none";
+	free.style.border = "2px solid white";
+var freep = document.getElementById("puzzlearea").appendChild(free);
 
-puzzle = $$("puzzlearea div"); 
-$("shufflebutton").observe('click',shufflePuzzle);
-movetile(); 
-
-var blankP = function(el){
-  el.removeClassName("movablepiece");
-  el.addClassName("puzzlepiece");
-  el.style.float = "left";
-  el.style.backgroundImage = "none";
-  el.style.border = "2px solid white";
-};
-var regularP = function(p){
-      p.addClassName("puzzlepiece");
-      p.style.border = "2px solid black";
-      p.style.backgroundImage = "url(background.jpg)";
-      p.style.backgroundSize = "400px 400px";
+function move() {
+	for (var i=0; i<puzz.length; i++)
+	{
+		var j=checkt(puzz[i]);
+		var k=checkb(puzz[i]);
+		var l=checkl(puzz[i]);
+		var m=checkr(puzz[i]);
+		
+		if (puzz[i].innerHTML !=" " && j=="true" || k == "true" || l == "true" || m == "true")
+		{
+			puzz[i].className += "movablepiece";
+		}
+	}
 }
 
-function shufflePuzzle(){
-	var numArray = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
-	for (var i=puzzle.length; i>0; i){
-		var j = Math.floor(Math.random() * i);
-		var x = numArray[--i];
-		var test = numArray[j];
-		if(test == "0") { 
-			puzzle[i].addClassName("puzzlepiece");
-	 		blankP(puzzle[i]);
-	 		puzzle[i].innerHTML = "";
-					}
-		else{
-     			puzzle[i].innerHTML = numArray[j];
-      			regularP(puzzle[i]);
-      			background_Position(puzzle[i], test);
-          }
-			numArray[j] = x;
+function checkr(s)
+    {
+    	
+if (parseInt(s.style.left)-(parseInt(add.style.left))==(-100) && (parseInt(s.style.top)==parseInt(add.style.top))){
+		return "true";
+    	
     }
-  	mopiece();
-   }
-   
-   var movepiece = function(){
-    var move = this.innerHTML;
-    var yon = this.hasClassName('movablepiece');
-    var blank = 0;
-    if (yon){
-      	for (var i=0;i<puzzle.length;i++){
-        	blank = puzzle[i].innerHTML;
-         	if (puzzle[i].innerHTML == ""){
-          		puzzle[i].innerHTML = move;
-          		this.innerHTML = blank;
+}
 
-          		regularP(puzzle[i]);
-          		blankP(this);
+function checkl(s)
+    {
+    	
+if (parseInt(s.style.left)-(parseInt(add.style.left))==(-100) && (parseInt(s.style.top)==parseInt(add.style.top))){
+		return "true";
+    	
+    }
+}
 
-        		 mopiece();
-        		 background_Position(puzzle[i], move);
-      }    
-     } 
-   }
-         };
-		 
-var mopiece = function(){
-	for (var i=0;i<puzzle.length;i++){
-		puzzle[i].removeClassName("movablepiece");	}
-		  for (var i=0; i<puzzle.length; i++){
-  			if (puzzle[i].innerHTML == ""){         
- 				  puzzle[i].removeClassName("movablepiece");
+function checkb(s){
 
-  				switch(i){
-  					case 0:
-  						movePA(i+1);
-  						movePA(i+4);
-              					break;
-  					case 1:
-  					case 2:
-  						movePA(i-1);
-  						movePA(i+1);
-        					movePA(i+4);
-  						break;
-  					case 3:
-  						movePA(i-1);
-  						movePA(i+4);
-  						break;
-  					case 4:
-  						movePA(i-4);
-  						movePA(i+4);
-  						movePA(i+1);
-  						break;
-  					case 5:
-  					case 6:
-  					case 9:
-  					case 10:
-  						movePA(i-4);
-  						movePA(i+4);
-  						movePA(i+1);
-  						movePA(i-1);
-              					break;
-  					case 7: 
-  					case 11:
-  						movePA(i-4);
-  						movePA(i+4);
-  						movePA(i-1);
-              					break;
-  					case 8:
-  						movePA(i-4);
-  						movePA(i+1);
-  						movePA(i+4);
-  						break;
-  					case 12:
-  						movePA(i-4);
-  						movePA(i+1);
-  						break;
-  					case 13: 
-  					case 14:
-  						movePA(i-4);
-  						movePA(i-1);
-  						movePA(i+1);
-  						break;
-  					case 15:
-  						movePA(i-4);
-  						movePA(i-1);
-  						break;
-  					}       	
-  		}
-      			puzzle[i].observe('click', movepiece); }  
+if (parseInt(s.style.top)-parseInt(add.style.top)== -100 && (parseInt(s.style.left)==parseInt(add.style.left))){
+			return "true";
+    
+    }
+}
+function checkt(s){
 
+if (parseInt(s.style.top)-parseInt(add.style.top)== -100 && (parseInt(s.style.left)==parseInt(add.style.left))){
+			return "true";
+    
+    }
+}
 
-}); 
-*/
+});
+ 
