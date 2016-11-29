@@ -133,9 +133,7 @@ var shuffle = function ()
 document.getElementById("shufflebutton").onclick = function ()
 {
 	shuffle();
-	move ();
-	//play();
-	
+	move ();	
 }
 
 });
