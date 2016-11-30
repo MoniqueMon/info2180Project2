@@ -133,8 +133,78 @@ var shuffle = function ()
 document.getElementById("shufflebutton").onclick = function ()
 {
 	shuffle();
-	move ();	
+	move ();
+	moving()';
 }
+	function moving ()
+	{
+		var puzz2 = document.getElementById("puzzlearea").querySelectorAll("div");
+		var m= new Array();
+		var o= new Array();
+		var n;
+		
+		for (var k=0;k<puzz2.length;k++)
+		{
+			if puzz2[k].className == "puzzlepiece movablepiece")
+			{
+				m.push(puzz2[k]);
+				
+			}
+		}
+		for (var l = 0; l<m.length;l++)
+		{
+			n=m[l];
+			
+			o.push(parseInt(n.innerHTML)-1);
+			
+		}
+		
+			m=o[k];
+		puzz2[o[0]].addEventListener("click",function()
+		{
+				 var temp = puzz2[o[1]].style.top;
+					puzz2[o[1]].style.top = add.style.top;
+					add.style.top = temp;
 
+					temp = puzz2[o[1]].style.left;
+					puzz2[o[1]].style.left = add.style.left;
+					add.style.left = temp;
+
+									});
+					puzz2[o[2]].addEventListener("click",function()
+										{
+									console.log(g);
+
+								 var temp = puzz2[o[2]].style.top;
+						puzz2[o[2]].style.top = add.style.top;
+						add.style.top = temp;
+
+						temp = puzz2[o[2]].style.left;
+						puzz2[o[2]].style.left = add.style.left;
+						add.style.left = temp;
+
+									});
+					puzz2[o[1]].addEventListener("click",function()
+										{
+									
+
+								 var temp = puzz2[o[3]].style.top;
+						puzz2[o[3]].style.top = add.style.top;
+						add.style.top = temp;
+
+						temp = puzz2[o[3]].style.left;
+						puzz2[o[3]].style.left = add.style.left;
+						add.style.left = temp;
+							
+					for ( a = 0; a < puzzle1.length; a++) {
+							puzz2[a].className=puzz2[a].className.replace("movablepiece","");
+							console.log(puzz2[a]);
+						   }
+							move();
+									});
+							}
+	}
+	
+	
 });
  
