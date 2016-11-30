@@ -163,25 +163,24 @@ document.getElementById("shufflebutton").onclick = function ()
 		puzz2[o[0]].addEventListener("click",function()
 		{
 				 var temp = puzz2[o[1]].style.top;
-					puzz2[o[1]].style.top = add.style.top;
-					add.style.top = temp;
+					puzz2[o[1]].style.top = freep.style.top;
+					free.style.top = temp;
 
 					temp = puzz2[o[1]].style.left;
-					puzz2[o[1]].style.left = add.style.left;
-					add.style.left = temp;
+					puzz2[o[1]].style.left = freep.style.left;
+					freep.style.left = temp;
 
 									});
 					puzz2[o[2]].addEventListener("click",function()
 										{
-									console.log(g);
 
 								 var temp = puzz2[o[2]].style.top;
-						puzz2[o[2]].style.top = add.style.top;
-						add.style.top = temp;
+						puzz2[o[2]].style.top = freep.style.top;
+						freep.style.top = temp;
 
 						temp = puzz2[o[2]].style.left;
-						puzz2[o[2]].style.left = add.style.left;
-						add.style.left = temp;
+						puzz2[o[2]].style.left = freep.style.left;
+						freep.style.left = temp;
 
 									});
 					puzz2[o[1]].addEventListener("click",function()
@@ -189,12 +188,12 @@ document.getElementById("shufflebutton").onclick = function ()
 									
 
 								 var temp = puzz2[o[3]].style.top;
-						puzz2[o[3]].style.top = add.style.top;
-						add.style.top = temp;
+						puzz2[o[3]].style.top = freep.style.top;
+						freep.style.top = temp;
 
 						temp = puzz2[o[3]].style.left;
-						puzz2[o[3]].style.left = add.style.left;
-						add.style.left = temp;
+						puzz2[o[3]].style.left = freep.style.left;
+						freep.style.left = temp;
 							
 					for ( a = 0; a < puzzle1.length; a++) {
 							puzz2[a].className=puzz2[a].className.replace("movablepiece","");
