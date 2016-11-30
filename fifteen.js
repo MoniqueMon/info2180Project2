@@ -145,7 +145,7 @@ document.getElementById("shufflebutton").onclick = function ()
 		
 		for (var k=0;k<puzz2.length;k++)
 		{
-			if puzz2[k].className == "puzzlepiece movablepiece")
+			if (puzz2[k].className == "puzzlepiece movablepiece")
 			{
 				m.push(puzz2[k]);
 				
