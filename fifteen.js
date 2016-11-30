@@ -134,7 +134,7 @@ document.getElementById("shufflebutton").onclick = function ()
 {
 	shuffle();
 	move ();
-	moving()';
+	moving();
 }
 	function moving ()
 	{
