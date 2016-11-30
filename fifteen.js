@@ -203,8 +203,5 @@ document.getElementById("shufflebutton").onclick = function ()
 							move();
 									});
 							}
-	}
-	
-	
-});
+	});
  
