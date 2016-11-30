@@ -84,7 +84,7 @@ function move() {
 function checkr(s)
     {
     	
-if (parseInt(s.style.left)-(parseInt(add.style.left))==(-100) && (parseInt(s.style.top)==parseInt(add.style.top))){
+if (parseInt(s.style.left)-(parseInt(freep.style.left))==(-100) && (parseInt(s.style.top)==parseInt(freep.style.top))){
 		return "true";
     	
     }
@@ -93,7 +93,7 @@ if (parseInt(s.style.left)-(parseInt(add.style.left))==(-100) && (parseInt(s.sty
 function checkl(s)
     {
     	
-if (parseInt(s.style.left)-(parseInt(add.style.left))==(-100) && (parseInt(s.style.top)==parseInt(add.style.top))){
+if (parseInt(s.style.left)-(parseInt(freep.style.left))==(-100) && (parseInt(s.style.top)==parseInt(freep.style.top))){
 		return "true";
     	
     }
@@ -101,14 +101,14 @@ if (parseInt(s.style.left)-(parseInt(add.style.left))==(-100) && (parseInt(s.sty
 
 function checkb(s){
 
-if (parseInt(s.style.top)-parseInt(add.style.top)== -100 && (parseInt(s.style.left)==parseInt(add.style.left))){
+if (parseInt(s.style.top)-parseInt(freep.style.top)== -100 && (parseInt(s.style.left)==parseInt(freep.style.left))){
 			return "true";
     
     }
 }
 function checkt(s){
 
-if (parseInt(s.style.top)-parseInt(add.style.top)== -100 && (parseInt(s.style.left)==parseInt(add.style.left))){
+if (parseInt(s.style.top)-parseInt(freep.style.top)== -100 && (parseInt(s.style.left)==parseInt(freep.style.left))){
 			return "true";
     
     }
@@ -164,7 +164,7 @@ document.getElementById("shufflebutton").onclick = function ()
 		{
 				 var temp = puzz2[o[1]].style.top;
 					puzz2[o[1]].style.top = freep.style.top;
-					free.style.top = temp;
+					freep.style.top = temp;
 
 					temp = puzz2[o[1]].style.left;
 					puzz2[o[1]].style.left = freep.style.left;
